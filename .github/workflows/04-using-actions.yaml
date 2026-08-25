@@ -1,0 +1,22 @@
+name: 04- using actions
+
+on: push
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v5
+            - name: printing folders
+              run: ls
+
+        
+
+        # install the dependencies
+
+        # excecute test cases
+
+
+    
