@@ -1,5 +1,7 @@
 name: 02-workflow-events
-on: push
+on: 
+    - push
+    - workflow_dispatch
 
 jobs:
     echo:
