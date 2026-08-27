@@ -1,0 +1,17 @@
+name: 05-Activity filters
+on: 
+   pull_request:
+    types:
+        - opened
+        - reopened
+        - synchronize
+    branches:
+        - main
+
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Hello
+              run: echo "Hello, World"
+
