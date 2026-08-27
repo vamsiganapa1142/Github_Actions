@@ -1,6 +1,10 @@
 name: 04- using actions
 
-on: workflow_dispatch
+on: 
+  push:
+    paths-ignore:
+        - '04-using-actions/**'
+        
 
 jobs:
     build:
