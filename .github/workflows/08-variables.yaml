@@ -1,6 +1,7 @@
 name: 08-variables
 
 on:
+    - push
     - workflow_dispatch
 
 env:
@@ -22,7 +23,7 @@ jobs:
                 step_var2: "I am a step var"
               run: |
                     echo "Step Env var $STEP_VAR" 
-                    echo "Step Env var 2 $step_var2"
+                    echo "Step Env var  $step_var2"
                     echo "Job Env var $JOB_VAR"
                     echo "Workflow Env var $WORKFLOW_VAR"
                     echo "Overwritten Env var $OVERWRITEN"
@@ -32,6 +33,37 @@ jobs:
                 OVERWRITEN: "I have been overwritten at the step level"
               run: |
                     echo "Step Env var $OVERWRITEN"
+
+    echo2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Printing Repository variables
+              run: |
+                    echo "Repository varaible ${{vars.REPO_VAR}}"
+    echo-prod:
+        runs-on: ubuntu-latest
+        environment: prod
+
+        steps:
+            - name: Printing Environment variables
+              run: |
+                    echo "Repository varaible ${{vars.REPO_VAR}}"
+                    echo "Repository varaible ${{vars.TARGET_VAR}}"
+                    echo "Repository varaible ${{vars.OVERWRITTEN_VAR}}"
+    echo-staging:
+        runs-on: ubuntu-latest
+        environment: staging
+
+        steps:
+            - name: Printing Environment variables
+              run: |
+                    echo "Repository varaible ${{vars.REPO_VAR}}"
+                    echo "Repository varaible ${{vars.TARGET_VAR}}"
+                
+
+
+
+
                 
 
 
