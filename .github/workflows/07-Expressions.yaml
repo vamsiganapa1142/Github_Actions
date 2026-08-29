@@ -1,0 +1,31 @@
+name: 07-EXpressions
+
+on:
+    - push
+    - workflow_dispatch
+
+jobs:
+
+  expressions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run the commands
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          echo "This is a push event"
+          echo "Running on the ${{ github.ref_name }}"
+      
+      - uses: actions/setup-python@v6
+        with: 
+            python-version: 3.14
+      
+      - name: Install dependencies
+        run: |
+            python -m pip install --upgrade pip
+            pip install -r 04-using-actions/requirements.txt
+        
+        
+
+
+
+            
