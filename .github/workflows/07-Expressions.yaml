@@ -7,10 +7,11 @@ on:
 jobs:
 
   expressions:
+    if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
+    
     steps:
       - name: Run the commands
-        if: ${{ github.event_name == 'push' }}
         run: |
           echo "This is a push event"
           echo "Running on the ${{ github.ref_name }}"
