@@ -14,6 +14,8 @@ jobs:
         run: |
           echo "This is a push event"
           echo "Running on the ${{ github.ref_name }}"
+      - name: Checkout code
+        uses: actions/checkout@v5
       - name: printing folders
         run: ls
       
