@@ -64,6 +64,8 @@ jobs:
 
     echo-undefined:
         runs-on: ubuntu-latest
+        env:
+            UNDEFINED_VAR_WITH_DEFAULT: "i am defined"
         steps:
             - name: Print Undefined Variables
               run: |
