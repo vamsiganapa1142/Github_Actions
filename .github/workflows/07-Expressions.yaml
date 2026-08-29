@@ -1,7 +1,6 @@
 name: 07-EXpressions
 
 on:
-    - push
     - workflow_dispatch
 
 jobs:
