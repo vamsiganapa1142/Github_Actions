@@ -39,7 +39,7 @@ jobs:
         steps:
             - name: Printing Repository variables
               run: |
-                    echo "Repository varaible ${{vars.REPO_VAR}}"
+                    echo "Repository varaible ${{vars.REPOSITORY_VAR}}"
     echo-prod:
         runs-on: ubuntu-latest
         environment: prod
@@ -47,7 +47,7 @@ jobs:
         steps:
             - name: Printing Environment variables
               run: |
-                    echo "Repository varaible ${{vars.REPO_VAR}}"
+                    echo "Repository varaible ${{vars.REPOSITORY_VAR}}"
                     echo "Repository varaible ${{vars.TARGET_VAR}}"
                     echo "Repository varaible ${{vars.OVERWRITTEN_VAR}}"
     echo-staging:
@@ -57,7 +57,7 @@ jobs:
         steps:
             - name: Printing Environment variables
               run: |
-                    echo "Repository varaible ${{vars.REPO_VAR}}"
+                    echo "Repository varaible ${{vars.REPOSITORY_VAR}}"
                     echo "Repository varaible ${{vars.TARGET_VAR}}"
                 
 
