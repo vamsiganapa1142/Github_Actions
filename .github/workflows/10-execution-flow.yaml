@@ -1,0 +1,34 @@
+name: 10 - Controlling the Execution Flow
+on: 
+    workflow_dispatch:
+        inputs:
+            run_step:
+                description: 'Run the step'
+                type: boolean
+                default: true
+jobs:
+    linit-build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Lint and build
+              run: |
+                        echo "Linting and building the project"
+
+    unit-test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run unit tests
+              run: |
+                        echo "Running unit tests"
+            - name: Failing tests
+              if: ${{!inputs.run_step}}
+              run: exit 1
+
+
+
+
+                        
+                        
+          
+
+
