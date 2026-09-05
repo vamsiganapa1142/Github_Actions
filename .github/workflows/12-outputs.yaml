@@ -17,7 +17,7 @@ jobs:
             outputs:
                 build-status: ${{ steps.build.outputs.status}}
                 output1: ${{ steps.build.outputs.output1}}
-                output2: ${{ steps.build.outputs.output3}}
+                output2: ${{ steps.build.outputs.output2}}
 
         steps:
             - name: path 
@@ -27,7 +27,7 @@ jobs:
               run: |
                     echo "status=${{inputs.build_status}}" >> "$GITHUB_OUTPUT"
                     echo "output1=value1" >> "$GITHUB_OUTPUT"
-                    echo "output3=value2" >> "$GITHUB_OUTPUT"
+                    echo "output2=value2" >> "$GITHUB_OUTPUT"
                     cat "$GITHUB_OUTPUT"
 
     deploy:
@@ -39,7 +39,7 @@ jobs:
               run: echo "Deploying to production environment"
 
 
-              
+
 
     
 
