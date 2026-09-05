@@ -21,7 +21,7 @@ jobs:
               run: echo "Path is $GITHUB_OUTPUT_PATH"
             - name: Build
               id: build
-              run: echo "failure=success" >> "$GITHUB_OUTPUT"
+              run: echo "status=success" >> "$GITHUB_OUTPUT"
 
 
 
@@ -31,7 +31,7 @@ jobs:
         steps:
             - name: Deploy
               run: echo "Build status is ${{ needs.build.outputs.build-status }}"
-              
+
     
 
 
