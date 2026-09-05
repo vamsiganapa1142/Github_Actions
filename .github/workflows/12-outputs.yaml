@@ -14,7 +14,6 @@ jobs:
     build:
         runs-on: ubuntu-latest
         outputs:
-            outputs:
                 build-status: ${{ steps.build.outputs.status}}
                 output1: ${{ steps.build.outputs.output1}}
                 output2: ${{ steps.build.outputs.output2}}
