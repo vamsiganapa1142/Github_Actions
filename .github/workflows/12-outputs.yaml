@@ -29,6 +29,7 @@ jobs:
                     echo "output2=value2" >> "$GITHUB_OUTPUT"
                     cat "$GITHUB_OUTPUT"
                     echo "mistake=true" > "$GITHUB_OUTPUT"
+                    cat "$GITHUB_OUTPUT"
    
                     
 
