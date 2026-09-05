@@ -13,12 +13,25 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        outputs:
+            build-status: ${{ steps.build.outputs.status}}
+
         steps:
             - name: path 
               run: echo "Path is $GITHUB_OUTPUT_PATH"
             - name: Build
               id: build
-              run: echo "key=build-value" >> $GITHUB_OUTPUT
+              run: echo "failure=success" >> "$GITHUB_OUTPUT"
+
+
+
+    deploy:
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+            - name: Deploy
+              run: echo "Build status is ${{ needs.build.outputs.build-status }}"
+              
     
 
 
