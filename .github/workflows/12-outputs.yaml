@@ -1,0 +1,28 @@
+name: 12 - Working with Outputs
+
+on:
+    workflow_dispatch:
+        inputs:
+            build-status:
+                type: choice
+                options:
+                    - success
+                    - failure
+                default: success
+        
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: path 
+              run: echo "Path is $GITHUB_OUTPUT_PATH"
+            - name: Build
+              id: build
+              run: echo "key=build-value" >> $GITHUB_OUTPUT
+    
+
+
+
+
+
+
