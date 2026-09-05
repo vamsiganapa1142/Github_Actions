@@ -1,11 +1,6 @@
 name: 05-Activity filters
-on: 
-   pull_request:
-    types:
-        - closed
-    branches:
-        - main
-
+on: workflow_dispatch
+       
 jobs:
     echo:
         runs-on: ubuntu-latest
