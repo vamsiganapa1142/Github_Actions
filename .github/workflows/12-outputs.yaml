@@ -17,6 +17,7 @@ jobs:
                 build-status: ${{ steps.build.outputs.status}}
                 output1: ${{ steps.build.outputs.output1}}
                 output2: ${{ steps.build.outputs.output2}}
+                output3: ${{ steps.build.outputs.mistake}}
 
         steps:
             - name: path 
@@ -41,6 +42,11 @@ jobs:
               if: ${{ needs.build.outputs.build-status == 'success' }}
               run: echo "Deploying to production environment"
 
+            - name: print outputs
+              run: |
+                        echo "Output 1: ${{ needs.build.outputs.output1 }}"
+                        echo "Output 2: ${{ needs.build.outputs.output2 }}"
+                        echo "Output 3: ${{ needs.build.outputs.output3 }}"
 
 
 
