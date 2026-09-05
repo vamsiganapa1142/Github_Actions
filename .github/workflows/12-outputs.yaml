@@ -18,7 +18,7 @@ jobs:
 
         steps:
             - name: path 
-              run: echo "Path is $GITHUB_OUTPUT_PATH"
+              run: echo "Path is $GITHUB_OUTPUT"
             - name: Build
               id: build
               run: echo "status=${{inputs.build_status}}" >> "$GITHUB_OUTPUT"
