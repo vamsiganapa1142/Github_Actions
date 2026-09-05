@@ -42,7 +42,10 @@ jobs:
               run: exit 1
 
             - name: Deploy
-              run: echo "Deploying to ${{ inputs.target }} environment"
+              run: | 
+                
+                    echo "Deploying to ${{ inputs.target }} environment"
+                    echo "My TARGET Variable is ${{ vars.TARGET_VAR }}"
 
 
 
