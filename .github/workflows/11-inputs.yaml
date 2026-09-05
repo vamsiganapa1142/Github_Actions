@@ -34,14 +34,11 @@ jobs:
 
     deploy:
         runs-on: ubuntu-latest
+        if: ${{ !inputs.dry-run }}
         environment: ${{ inputs.target }}
         needs: 
             - build
         steps:
-            - name: Deploying 
-              if: ${{ !inputs.dry-run }}
-              run: exit 1
-
             - name: Deploy
               run: | 
                 
