@@ -59,11 +59,14 @@ jobs:
                 color: [red, green]
                 shape: [circle, square]
                 size: [small, large]
+                opacity: [50, 100]
                 include:
                     - color: red
                       shape: triangle
 
-                    - opacity: 50 
+                exclude:
+                    - opacity: 100
+                     
         name: ${{matrix.color}}-${{matrix.shape}}-${{matrix.size}}-${{matrix.opacity}}
 
         steps:
