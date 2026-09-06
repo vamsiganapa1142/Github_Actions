@@ -53,7 +53,7 @@ jobs:
 
     
     Include-Examples:
-        
+  
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -64,8 +64,7 @@ jobs:
                     - color: red
                       shape: triangle
         name: ${{matrix.color}}-${{matrix.shape}}-${{matrix.size}}
-
-                  
+          
 
 
 
