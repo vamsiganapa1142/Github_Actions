@@ -38,7 +38,6 @@ jobs:
               with:
                     name: my-artifact-${{ matrix.python-version }}-${{ matrix.os }}
                     path: build/
-
     
     Collecting-Results:
         runs-on: ubuntu-latest
@@ -51,6 +50,27 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                 path: build/
+
+    
+    Include-Examples:
+        
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                color: [red, green]
+                shape: [circle, square]
+                size: [small, large]
+                include:
+                    - color: red
+                      shape: triangle
+        name: ${{matrix.color}}-${{matrix.shape}}-${{matrix.size}}
+
+                  
+
+
+
+        
+        
 
 
 
