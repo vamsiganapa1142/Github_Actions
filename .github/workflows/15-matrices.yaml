@@ -67,6 +67,9 @@ jobs:
                 exclude:
                     - opacity: 75
 
+                    - color: green
+                    - shape: circle
+
         name: ${{matrix.color}}-${{matrix.shape}}-${{matrix.size}}-${{matrix.opacity}}
 
         steps:
