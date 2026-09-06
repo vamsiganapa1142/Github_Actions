@@ -53,7 +53,6 @@ jobs:
 
     
     Include-Examples:
-  
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -64,6 +63,13 @@ jobs:
                     - color: red
                       shape: triangle
         name: ${{matrix.color}}-${{matrix.shape}}-${{matrix.size}}
+
+        steps:
+           - name: Show matrix values
+             run: |
+                  echo "Color: ${{ matrix.color }}"
+                  echo "Shape: ${{ matrix.shape }}"
+                  echo "Size: ${{ matrix.size }}"
           
 
 
