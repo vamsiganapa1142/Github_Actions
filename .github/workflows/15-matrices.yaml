@@ -62,7 +62,8 @@ jobs:
                 include:
                     - color: red
                       shape: triangle
-        name: ${{matrix.color}}-${{matrix.shape}}-${{matrix.size}}
+                    - opacity: 50 
+        name: ${{matrix.color}}-${{matrix.shape}}-${{matrix.size}}-${{matrix.opacity}}
 
         steps:
            - name: Show matrix values
@@ -70,6 +71,7 @@ jobs:
                   echo "Color: ${{ matrix.color }}"
                   echo "Shape: ${{ matrix.shape }}"
                   echo "Size: ${{ matrix.size }}"
+                  echo "Opacity: ${{ matrix.opacity }}"
           
 
 
